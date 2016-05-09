@@ -215,6 +215,19 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>
+QuickBlox iOS SDK is licensed under the QuickBlox SDK License.
+
+Copyright (c) 2014 QuickBlox
+
+</string>
+			<key>Title</key>
+			<string>QuickBlox</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>GCDAsyncSocket: (Public Domain)
 
 This class is released under the public domain.

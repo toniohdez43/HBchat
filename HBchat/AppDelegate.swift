@@ -8,16 +8,33 @@
 
 import UIKit
 import xmpp_messenger_ios
-
+import Quickblox
 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        QBSettings.setAccountKey("yjYy18hXswrqFSpHKbSj")
+        //QBSettings.setApiEndpoint("https://api.quickblox.com", chatEndpoint: "chat.quickblox.com", forServiceZone: qbprod)
+        QBSettings.setAuthKey("xnDkEMM7Lkc7dQe")
+        
+        QBSettings.setAuthSecret("fNEan7pyzXwXN5V")
+        QBSettings.setApplicationID(40425)
+        
+        // enabling carbons for chat
+        QBSettings.setCarbonsEnabled(true)
+        
+        // Enables Quickblox REST API calls debug console output.
+        QBSettings.setLogLevel(QBLogLevel.Nothing)
+        
+        // Enables detailed XMPP logging in console output.
+        QBSettings.enableXMPPLogging()
+        
+        
         // Override point for customization after application launch.
         OneChat.start(true, delegate: nil) { (stream, error) -> Void in
             if let _ = error {

@@ -6,6 +6,7 @@ use_frameworks!
 target 'HBchat' do
 pod 'xmpp-messenger-ios', '~> 1.0'
 pod 'Parse'
+pod 'QuickBlox'
 end
 
 

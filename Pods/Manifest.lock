@@ -18,6 +18,7 @@ PODS:
   - JSQSystemSoundPlayer (2.0.1)
   - Parse (1.13.0):
     - Bolts/Tasks (~> 1.6)
+  - QuickBlox (2.7.2)
   - xmpp-messenger-ios (1.0.1):
     - FMDB (~> 1.0)
     - JSQMessagesViewController
@@ -168,6 +169,7 @@ PODS:
 
 DEPENDENCIES:
   - Parse
+  - QuickBlox
   - xmpp-messenger-ios (~> 1.0)
 
 SPEC CHECKSUMS:
@@ -178,6 +180,7 @@ SPEC CHECKSUMS:
   JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
+  QuickBlox: 99d8b2db8df393e6b38e601a9d3ed2d0dd4b4db3
   xmpp-messenger-ios: e1a81270a0d62f1307c86b493209f01853e82e6b
   XMPPFramework: b06c210b0b71c08aa41a646bffd2021fa43bb43b
 

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '614BA5A5282953283C2223D3'
+               BlueprintIdentifier = '88E6A3D6D938FC653ACAA385'
                BlueprintName = 'xmpp-messenger-ios'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'xmpp_messenger_ios.framework'>

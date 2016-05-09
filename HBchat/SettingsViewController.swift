@@ -9,6 +9,7 @@
 import UIKit
 import XMPPFramework
 import xmpp_messenger_ios
+import Quickblox
 
 class SettingsViewController: UIViewController {
     
@@ -20,6 +21,9 @@ class SettingsViewController: UIViewController {
     @IBAction func validate(sender: AnyObject) {
         if OneChat.sharedInstance.isConnected() {
             OneChat.sharedInstance.disconnect()
+            QBRequest.logOutWithSuccessBlock({ (response:QBResponse) in
+                print("logged out")
+                }, errorBlock:   { (response:QBResponse) in                  print("unable to logout")})
             usernameTextF.hidden = false
             passwordTextF.hidden = false
             validateBttn.setTitle("Validate", forState: UIControlState.Normal)
@@ -37,11 +41,39 @@ class SettingsViewController: UIViewController {
                     }))
                     self.presentViewController(alertController, animated: true, completion: nil)
                 } else {
+                    let user:QBUUser! = QBUUser()
+                    user.password=self.passwordTextF.text!
+                    user.login = self.usernameTextF.text!
+                    QBRequest.signUp(user, successBlock: { (response:QBResponse,user: QBUUser?) in
+                        print("logro el sign")
+                        self.login(self.usernameTextF.text!, password: self.passwordTextF.text!)
+                        }, errorBlock: { (response:QBResponse) in
+                        self.login(user?.login, password: user?.password)
+                    })
                     self.dismissViewControllerAnimated(true, completion: nil)
                 }
             }
         }
     }
+    
+    func successBlock() -> (response: QBResponse, user: QBUUser?) -> Void {
+        return {(response: QBResponse, user: QBUUser?) -> Void in
+            print("Login succeeded")
+        }
+    }
+    
+    func errorBlock() -> QBRequestErrorBlock {
+        return {(response: QBResponse) -> Void in
+            print("Error en las credenciales")
+        }
+    }
+    
+    func login(userName: String!, password: String!) {
+        // Authenticate user
+        QBRequest.logInWithUserLogin(userName, password: password, successBlock: self.successBlock(), errorBlock: self.errorBlock())
+    }
+
+    
     @IBAction func done(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }

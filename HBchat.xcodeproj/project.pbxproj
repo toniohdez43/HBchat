@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C9846C11CDFEA73005BB0B1 /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9846C01CDFEA73005BB0B1 /* Quickblox.framework */; };
+		9C9846C61CE01B57005BB0B1 /* ChatsMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9846C51CE01B57005BB0B1 /* ChatsMenuController.swift */; };
 		9C98F6731CCD6AD300980677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F6721CCD6AD300980677 /* AppDelegate.swift */; };
 		9C98F6751CCD6AD300980677 /* OpenChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F6741CCD6AD300980677 /* OpenChatsTableViewController.swift */; };
 		9C98F6781CCD6AD300980677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C98F6761CCD6AD300980677 /* Main.storyboard */; };
@@ -41,6 +43,9 @@
 		109946055F0B7060867B6A96 /* Pods-HBchat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HBchat.release.xcconfig"; path = "Pods/Target Support Files/Pods-HBchat/Pods-HBchat.release.xcconfig"; sourceTree = "<group>"; };
 		198071AC9301D207535B277E /* Pods-HBchat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HBchat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HBchat/Pods-HBchat.debug.xcconfig"; sourceTree = "<group>"; };
 		49FE9F317AA65325E3DE0584 /* Pods_HBchat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HBchat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C9846C01CDFEA73005BB0B1 /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quickblox.framework; sourceTree = "<group>"; };
+		9C9846C31CDFEE6C005BB0B1 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		9C9846C51CE01B57005BB0B1 /* ChatsMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsMenuController.swift; sourceTree = "<group>"; };
 		9C98F66F1CCD6AD300980677 /* HBchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HBchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C98F6721CCD6AD300980677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C98F6741CCD6AD300980677 /* OpenChatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChatsTableViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADF1A645C5D536B31DF9E526 /* Pods_HBchat.framework in Frameworks */,
+				9C9846C11CDFEA73005BB0B1 /* Quickblox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,14 +103,24 @@
 		951FF8DBE0FFBE597882E6D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C9846C01CDFEA73005BB0B1 /* Quickblox.framework */,
 				49FE9F317AA65325E3DE0584 /* Pods_HBchat.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9C9846C41CE01AB4005BB0B1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9C9846C51CE01B57005BB0B1 /* ChatsMenuController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		9C98F6661CCD6AD300980677 = {
 			isa = PBXGroup;
 			children = (
+				9C9846C31CDFEE6C005BB0B1 /* Bridging-Header.h */,
 				9C98F6711CCD6AD300980677 /* HBchat */,
 				9C98F6861CCD6AD300980677 /* HBchatTests */,
 				9C98F6911CCD6AD300980677 /* HBchatUITests */,
@@ -127,6 +143,7 @@
 		9C98F6711CCD6AD300980677 /* HBchat */ = {
 			isa = PBXGroup;
 			children = (
+				9C9846C41CE01AB4005BB0B1 /* Controllers */,
 				9C98F6721CCD6AD300980677 /* AppDelegate.swift */,
 				9C98F6741CCD6AD300980677 /* OpenChatsTableViewController.swift */,
 				9C98F6AD1CCD80FF00980677 /* SettingsViewController.swift */,
@@ -345,6 +362,7 @@
 				9C98F6AA1CCD80CF00980677 /* ChatViewController.swift in Sources */,
 				9C98F6AC1CCD80E600980677 /* ContactListTableViewController.swift in Sources */,
 				9C98F6AE1CCD80FF00980677 /* SettingsViewController.swift in Sources */,
+				9C9846C61CE01B57005BB0B1 /* ChatsMenuController.swift in Sources */,
 				9C98F6731CCD6AD300980677 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,11 +510,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_HEADERS_RUN_UNIFDEF = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = HBchat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tonio43.HBchat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -507,11 +531,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_HEADERS_RUN_UNIFDEF = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = HBchat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tonio43.HBchat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Release;
 		};
