@@ -8,6 +8,7 @@
 
 import UIKit
 import Quickblox
+import SVProgressHUD
 
 class DialogTableViewCellModel: NSObject {
     
@@ -16,6 +17,8 @@ class DialogTableViewCellModel: NSObject {
     var unreadMessagesCounterLabelText : String?
     var unreadMessagesCounterHiden = true
     var dialogIcon : UIImage?
+    
+    
     
     init(dialog: QBChatDialog) {
         super.init()
@@ -34,7 +37,7 @@ class DialogTableViewCellModel: NSObject {
             
             // Getting recipient from users service.
             //if let recipient = ServicesManager.instance().usersService.usersMemoryStorage.userWithID(UInt(dialog.recipientID)) {
-            // self.textLabelText = recipient.login ?? recipient.email!
+            //self.textLabelText = recipient.login ?? recipient.email!
             //}
         }
         
@@ -79,6 +82,34 @@ class DialogTableViewCellModel: NSObject {
 
 class ChatsMenuController: UITableViewController{
     private var didEnterBackGroundDate: NSDate?
+    var count:UInt! = 0
+    var dialogs:[QBChatDialog]!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        // calling awakeFromNib due to viewDidLoad not being called by instantiateViewControllerWithIdentifier
+        //self.navigationItem.title = QBSession.currentSession().currentUser!.login!
+        
+        
+        
+        
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationDidBecomeActiveNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification: NSNotification) -> Void in
+            
+            if !QBChat.instance().isConnected() {
+                SVProgressHUD.showWithStatus("Connecting to chat...", maskType: SVProgressHUDMaskType.Clear)
+            }
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatsMenuController.didEnterBackgroundNotification), name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        
+        if (QBChat.instance().isConnected()) {
+            
+        }
+    }
+    func didEnterBackgroundNotification() {
+        //self.didEnterBackgroundDate = NSDate()
+    }
     
     override func viewWillAppear(animated: Bool) {
         if (QBSession.currentSession().currentUser==nil)
@@ -94,12 +125,14 @@ class ChatsMenuController: UITableViewController{
             let page = QBResponsePage(limit: 100, skip: 0)
             
             QBRequest.dialogsForPage(page, extendedRequest: extendedRequest, successBlock: { (response: QBResponse, dialogs: [QBChatDialog]?, dialogsUsersIDs: Set<NSNumber>?, page: QBResponsePage?) -> Void in
-                
+                self.dialogs = dialogs
+                print(self.dialogs)
             }) { (response: QBResponse) -> Void in
                 
             }
             QBRequest.countOfDialogsWithExtendedRequest(nil, successBlock: { (response : QBResponse!, count : UInt) -> Void in
-                
+                self.count=count
+                print(self.count)
             }) { (response : QBResponse!) -> Void in
                 
             }
