@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C4FD56E1CE0FCBC0070C1C3 /* DialogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FD56D1CE0FCBC0070C1C3 /* DialogTableViewCell.swift */; };
 		9C9846C11CDFEA73005BB0B1 /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9846C01CDFEA73005BB0B1 /* Quickblox.framework */; };
 		9C9846C61CE01B57005BB0B1 /* ChatsMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9846C51CE01B57005BB0B1 /* ChatsMenuController.swift */; };
 		9C98F6731CCD6AD300980677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F6721CCD6AD300980677 /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 		109946055F0B7060867B6A96 /* Pods-HBchat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HBchat.release.xcconfig"; path = "Pods/Target Support Files/Pods-HBchat/Pods-HBchat.release.xcconfig"; sourceTree = "<group>"; };
 		198071AC9301D207535B277E /* Pods-HBchat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HBchat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HBchat/Pods-HBchat.debug.xcconfig"; sourceTree = "<group>"; };
 		49FE9F317AA65325E3DE0584 /* Pods_HBchat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HBchat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C4FD56D1CE0FCBC0070C1C3 /* DialogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogTableViewCell.swift; sourceTree = "<group>"; };
 		9C9846C01CDFEA73005BB0B1 /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quickblox.framework; sourceTree = "<group>"; };
 		9C9846C31CDFEE6C005BB0B1 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		9C9846C51CE01B57005BB0B1 /* ChatsMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsMenuController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9C4FD56C1CE0FCB10070C1C3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9C4FD56D1CE0FCBC0070C1C3 /* DialogTableViewCell.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		9C9846C41CE01AB4005BB0B1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 		9C98F6711CCD6AD300980677 /* HBchat */ = {
 			isa = PBXGroup;
 			children = (
+				9C4FD56C1CE0FCB10070C1C3 /* Components */,
 				9C9846C41CE01AB4005BB0B1 /* Controllers */,
 				9C98F6721CCD6AD300980677 /* AppDelegate.swift */,
 				9C98F6741CCD6AD300980677 /* OpenChatsTableViewController.swift */,
@@ -358,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4FD56E1CE0FCBC0070C1C3 /* DialogTableViewCell.swift in Sources */,
 				9C98F6751CCD6AD300980677 /* OpenChatsTableViewController.swift in Sources */,
 				9C98F6AA1CCD80CF00980677 /* ChatViewController.swift in Sources */,
 				9C98F6AC1CCD80E600980677 /* ContactListTableViewController.swift in Sources */,
